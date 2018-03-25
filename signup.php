@@ -14,6 +14,9 @@ session_start();
         	function return_to_homepage(){
         		window.location.href = "index.php";
         	}
+        	function go_to_profile(){
+        		window.location.href = "profile.php";
+        	}
         </script>
 
 
@@ -32,8 +35,9 @@ session_start();
                         <?php
                             if (isset($_SESSION['u_id'])){
                                 echo '<form action="../homepage/includes/logout.inc.php" method="POST">
-                            <button type="submit" name="submit">Logout</button>
-                        </form>';
+                                	<button type="button" onclick="go_to_profile">aaasss</button>
+                           			
+                        			</form>';
                             } else{
                                 echo '<form action="../homepage/includes/login.inc.php" method="POST">
                         <input type="text" name="uid" placeholder="Email">

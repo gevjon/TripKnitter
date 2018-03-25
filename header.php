@@ -30,7 +30,9 @@ session_start();
                         <?php
                             if (isset($_SESSION['u_id'])){
                                 echo '<form action="../homepage/includes/logout.inc.php" method="POST">
-                            <button type="submit" name="submit">Logout</button>
+                                <a href="profile.php">'.$_SESSION["u_name"].'</a>
+                                <button type="submit" name="submit">Logout</button>
+
                         </form>';
                             } else{
                                 echo '<form action="../homepage/includes/login.inc.php" method="POST">

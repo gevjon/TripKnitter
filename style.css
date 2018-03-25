@@ -189,7 +189,14 @@ header .nav-login form button:hover{
     background-color: rgb(47, 139, 50);
 }
 
-
+header .nav-login form a{
+    font-family: Helvetica-Bold;
+    text-decoration: none;
+    color: black;
+    float:left;
+    font-size: 18px;
+    margin-right:10px;
+}
 
 .container{
     margin-top: 400px;

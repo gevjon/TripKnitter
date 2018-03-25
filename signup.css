@@ -54,6 +54,7 @@ a {
     margin:0;
     padding:0;
     font-size:100%;
+    color: black;
     vertical-align:baseline;
     background:transparent;
 }
@@ -142,6 +143,11 @@ header .nav-login {
     float: right;
 }
 
+header .nav-login a{
+    float: left;
+    font-size: 12px;
+    color: black;
+}
 header .nav-login form{
     float:left;
     padding-top: 10px;

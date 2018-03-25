@@ -13,13 +13,13 @@ session_start();
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="user_profile.js"></script>
 
     </head>
 
 
         <body>
             <header>
-              <script type="text/javascript" src="user_profile.js"></script>
                 <nav>
                 <div class="main-warpper">
                     <ul>
@@ -31,7 +31,9 @@ session_start();
                         <?php
                             if (isset($_SESSION['u_id'])){
                                 echo '<form action="../homepage/includes/logout.inc.php" method="POST">
-                            <button type="submit" name="submit">Logout</button>
+                                <a href="profile.php">'.$_SESSION["u_name"].'</a>
+                                <button type="submit" name="submit">Logout</button>
+
                         </form>';
                             } else{
                                 echo '<form action="../homepage/includes/login.inc.php" method="POST">

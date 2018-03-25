@@ -13,14 +13,13 @@
 
 
             <div class="container">
-                <form id="search-homepage" action="">
+                <form id="search-homepage" action="" target="_blank">
                     <div class="input-group input-group-lg" >
                         <input type="text" class="form-control" placeholder="Search for Attractions" name="search-homepage">
                         <span class="input-group-btn">
                         <button type="submit" class="btn btn-lg" value="submit">
                         Search</button>
                         </span>
-
                     </div>
                 </form>
             </div>

@@ -19,6 +19,7 @@ session_start();
 
         <body>
             <header>
+              <script type="text/javascript" src="user_profile.js"></script>
                 <nav>
                 <div class="main-warpper">
                     <ul>

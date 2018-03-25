@@ -26,11 +26,11 @@
             </div>
 
 						<div class="section" style="margin-top:20%;padding:80px;">
-							<a href="index.php" style="padding-left:23%;">
+							<a href="index.php" style="padding-left:23%;text-decoration:none;">
 							<img src="figures/spots.png" alt="List of Spots" width="150px" height="150px" style="opacity:0.8"/>
 							</a>
 
-							<a href="index.php" style="padding-left:200px;">
+							<a href="index.php" style="padding-left:200px;text-decoration:none;">
 							<img src="figures/plan.png"  alt="Desgin Your Trip" width="150px" height="150px" style="opacity:0.8"/>
 							</a>
 

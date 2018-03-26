@@ -9,7 +9,7 @@
     function return_url(){
         var a = window.location.search;
         var start = a.search("username")+9;
-        var b = a.substr(start,);       
+        var b = a.substr(start,);
         var f1 = document.search;
         if (!b){
             f1.action = "search.php";
@@ -17,7 +17,7 @@
         }else{
             f1.action = "search.php?username="+b
         }
-       
+
 
     }
 
@@ -34,7 +34,7 @@
             echo '<script>wrong_pwd()</script>';
         }
     }
-    
+
 
 
  ?>
@@ -51,11 +51,9 @@
 
 
             <div class="container">
-<<<<<<< HEAD
-                <form id="search-homepage" action="" target="_blank">
-=======
+
+              
                 <form name="search" id="search-homepage" action="" method="POST">
->>>>>>> 8adaab1544d8fcb0a2663be3d408d93aacee105e
                     <div class="input-group input-group-lg" >
                         <input type="text" class="form-control" placeholder="Search for Attractions" name="search-homepage">
                         <span class="input-group-btn">

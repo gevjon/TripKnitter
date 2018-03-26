@@ -243,6 +243,10 @@ session_start();
 							</div>';
 					}
 					else{
+						$email = $_GET['email'];
+						$username = $_GET['username'];
+						$_SESSION['u_email'] = $email;
+						$_SESSION['u_name'] = $username;
 						echo '<p class="signup_success"><b>Congratulations! You have successfully registered.</b></p>
 							<button type="button" class="return_button" onclick="return_to_homepage()">Return</button>';
 					}

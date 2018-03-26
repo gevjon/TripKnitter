@@ -1,4 +1,4 @@
-<?php 
+<?php
 	echo '<script type="text/javascript">
 	function goto_url(){
 		f1 = document.f1;
@@ -31,8 +31,8 @@
 					 <img src="'.$img_url.'" alt="spots image" width="200px" height="150px" style="margin:50px;float:left;">
 					 <p style="float:left;">
 					 <input type="hidden" name="spot_name" value="'.$spot_name.'">
-					 <h2 name="spot_name" value="'.$spot_name.'" style="padding-top:50px;"> '.$spot_name.'<button type="submit" name="favorite" style="float:right;margin-right:10px;">Favorite</button></h2>
-					 <p style="">'.$review_essential.'</p>
+					 <h2 name="spot_name" value="'.$spot_name.'" style="padding-top:40px;"> '.$spot_name.'<button type="submit" name="favorite" style="float:right;margin-right:10px;background-color:white;font-size:20px;padding:5px;">Favorite</button></h2>
+					 <p style="padding-right:150px;padding-top:10px;">'.$review_essential.'</p>
 					 </p>
 
 				</form>
@@ -40,7 +40,6 @@
 				<br style="clear:both;">
 				<hr>';
 		}
-		
 
 	}
 	// else{

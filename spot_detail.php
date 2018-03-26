@@ -2,7 +2,9 @@
 	include "header.php";
  ?>
 <br>
- <h1 style="text-align:center;">Title here</h1>
+ <h1 style="text-align:center;">Title here
+   <button type="submit" name="favorite" style="margin-left: 10px;margin-right:10px;background-color:white;font-size:20px;padding:5px;">Favorite</button>
+ </h1>
  <img src="figures/spot_default.jpg" alt="spot image" width="350px" height="250px" style="margin-left:50px;margin-bottom: 50px;float:left;">
  <div style="float:left;">
    <p style="padding-left:30px;padding-top: 40px;text-align:left;"> Category: .....</p>

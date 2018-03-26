@@ -1,4 +1,4 @@
-<div id="footer" style="background-color:black;color:white;height:18%;">
+<div id="footer" style="background-color:black;color:white;height:18%;clear:both;">
   <p style="padding-left: 200px;padding-right:200px;padding-top: 20px;font-size:10px;">
     About us: TripKnitter provides web based services to plan out
     the trip for you automatically. We knit the plans by searching

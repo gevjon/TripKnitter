@@ -1,5 +1,42 @@
+
+<script type="text/javascript">
+    function user_not_exist(){
+        alert("This account does not exsit! \n (hint: You should enter your email not user name)");
+    }
+    function wrong_pwd(){
+        alert("Incorrect Password!");
+    }
+    function return_url(){
+        var a = window.location.search;
+        var start = a.search("username")+9;
+        var b = a.substr(start,);       
+        var f1 = document.search;
+        if (!b){
+            f1.action = "search.php";
+            f1.submit();
+        }else{
+            f1.action = "search.php?username="+b
+        }
+       
+
+    }
+
+
+</script>
+
 <?php
 	include "header.php";
+    if (isset($_GET['login'])){
+        if ($_GET['login'] == "nothisuser"){
+            echo '<script>user_not_exist()</script>';
+        }
+        elseif ($_GET['login'] == "wrong_pwd"){
+            echo '<script>wrong_pwd()</script>';
+        }
+    }
+    
+
+
  ?>
 
         <section class="main-container">
@@ -13,12 +50,11 @@
 
 
             <div class="container">
-                <form id="search-homepage" action="">
+                <form name="search" id="search-homepage" action="" method="POST">
                     <div class="input-group input-group-lg" >
                         <input type="text" class="form-control" placeholder="Search for Attractions" name="search-homepage">
                         <span class="input-group-btn">
-                        <button type="submit" class="btn btn-lg" value="submit">
-                        Search</button>
+                        <button type="submit" class="btn btn-lg" name="submit" onclick="return_url();">Search</button>
                         </span>
 
                     </div>

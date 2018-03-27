@@ -1,6 +1,6 @@
 <?php
 	include "header.php";
-	include "includes/db.inc.php"
+	include_once "../homepage/includes/db.inc.php";
  ?>
 
  <div id="background2" style="position:absolute;z-index:-1;width:100%;height:100%;left:0px;margin-top:-250px;margin-bottom:-50px;">
@@ -40,8 +40,8 @@
 
 
 <?php
-$sql= "SELECT distinct city from attraction";//sql语句
-$result = mysql_query($sql, $conn);//执行sql语句
+$sql= "SELECT distinct city FROM attraction;";//sql语句
+$result = mysqli_query($sql, $conn);//执行sql语句
 ?>
 <script type="text/javascript">
 		var unitObj=document.getElementByName("city"); //页面上的<html:select>元素

@@ -34,7 +34,7 @@
 		<option value="more"> more than 3 </option>
 	</select>
 
-	<input type="submit" value="Plan My Trip" style="color:white;width: 300px;margin-left: 35%;margin-top: 50px;padding: 5px;background-color:#3EC3C1;border:none;">
+	<input type="submit" value="Plan My Trip" style="border-radius: 12px;font-size: 20px;color:white;width: 300px;margin-left: 35%;margin-top: 50px;padding: 5px;background-color:#3EC3C1;border:none;">
 
 </form>
 

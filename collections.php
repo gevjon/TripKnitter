@@ -6,7 +6,7 @@
 
 <?php
 
-if (isset($_POST['favorite'])){
+if (isset($_POST['unlike'])){
 	if (isset($_SESSION['u_id'])){
 		$username = $_SESSION['u_name'];
 		$sql_uid = "SELECT UID FROM user WHERE username = '$username';";

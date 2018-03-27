@@ -9,8 +9,19 @@
 		f1.submit();
 	}
 
-	function change_button(index){
-		document.getElementById(index).innerHTML='<p name="favorite" style="float:right;color:green;font-family: Helvetica-Bold;margin-right:20px;font-size:20px;padding:5px;">Liked!</p>';
+	function like_button(button){
+		if (button.name == "unlike"){
+			document.getElementById(button.id).innerHTML='<button type="submit"  name="like" id=button.id onclick="like_button(this)" style="float:right;outline:none;border:none;background-color:Transparent;margin-right:30px;margin-top:-30px;height:35px;width:35px;"><img src="../homepage/figures/collection_star.png" style="width:30px;height:30px;"></button>';
+		}
+		else{
+			document.getElementById(button.id).innerHTML='<button type="submit"  name="unlike" id=button.id onclick="like_button(this)" style="float:right;outline:none;border:none;background-color:Transparent;margin-right:30px;margin-top:-30px;height:35px;width:35px;"><img src="../homepage/figures/collection_unstar.png" style="width:30px;height:30px;"></button>';
+		}
+
+		
+	}
+
+	function unlike_button(index){
+		document.getElementById(index).innerHTML='<button type="submit"  name="favorite" id=index.toString() onclick="like_button(this.id)" style="float:right;outline:none;border:none;background-color:Transparent;margin-right:30px;margin-top:-30px;height:35px;width:35px;"><img src="../homepage/figures/collection_unstar.png" style="width:30px;height:30px;"></button>';
 	}
 
 </script>
@@ -62,7 +73,7 @@
 					 <img src="'.$img_url.'" alt="spots image" width="200px" height="150px" style="margin:50px;float:left;">
 					 <p style="float:left;">
 					 <input type="hidden" name="spot_name" value="'.$spot_name.'">
-					 <h2 name="spot_name" value="'.$spot_name.'" style="padding-top:40px;"> '.$spot_name.'<div id="'.$index.'"><button type="submit" value="'.$index.'" name="favorite" id="'.$index.'" onclick="change_button(this.id);" style="float:right;margin-right:10px;background-color:white;font-size:20px;padding:5px;">Favorite</button></div></h2>
+					 <h2 name="spot_name" value="'.$spot_name.'" style="padding-top:40px;"> '.$spot_name.'<div id="'.$index.'"><button type="submit" name="unlike" id="'.$index.'"  onclick="like_button(this)" style="float:right;outline:none;border:none;background-color:Transparent;margin-right:30px;margin-top:-30px;height:35px;width:35px;"><img src="../homepage/figures/collection_unstar.png" style="width:30px;height:30px;"></button></div></h2>
 					 <p style="padding-right:150px;padding-top:10px;">'.$review_essential.'</p>
 					 </p>
 

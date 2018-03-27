@@ -8,7 +8,7 @@
 
 	<span></span>
 	<p class="h1" id="username" style="padding-top:100px;">Username</p>
-	<p>Email Address:</p>
+	<p>Email Address:<php $_SESSION?></p>
 
 </div>
 

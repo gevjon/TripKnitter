@@ -36,14 +36,14 @@
 
 
 		//Check whether the user has already favorited some spots
-		$username = $_SESSION['u_name'];
-		$sql_user = "SELECT SID FROM FavoriteSpots WHERE UID='$username';";
-		$result = mysqli_query($conn, $sql_user);
-		$resultcheck = mysqli_num_rows($result);
-		if ($resultcheck > 0){
-			while ($row=mysqli_fetch_assoc($result))
-				$saved_fav[] = $row;
-		}
+		// $username = $_SESSION['u_name'];
+		// $sql_user = "SELECT SID FROM FavoriteSpots WHERE UID='$username';";
+		// $result = mysqli_query($conn, $sql_user);
+		// $resultcheck = mysqli_num_rows($result);
+		// if ($resultcheck > 0){
+		// 	while ($row=mysqli_fetch_assoc($result))
+		// 		$saved_fav[] = $row;
+		// }
 		
 
 

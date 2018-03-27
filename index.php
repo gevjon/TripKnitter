@@ -52,7 +52,7 @@
 
             <div class="container">
 
-              
+
                 <form name="search" id="search-homepage" action="" method="POST">
                     <div class="input-group input-group-lg" >
                         <input type="text" class="form-control" placeholder="Search for Attractions" name="search-homepage">
@@ -64,8 +64,8 @@
             </div>
 
 						<div class="section" style="margin-top:20%;padding:80px;">
-							<a href="spots_list.php" style="padding-left:23%;text-decoration:none;">
-							<img src="figures/spots.png" alt="List of Spots" width="150px" height="150px" style="opacity:0.8"/>
+							<a href="spots_list.php" style="padding-left:24%;text-decoration:none;">
+							<img src="figures/spots.png" alt="Spots Board" width="150px" height="150px" style="opacity:0.8"/>
 							</a>
 
 							<a href="trip_design.php" style="padding-left:200px;text-decoration:none;">
@@ -73,7 +73,7 @@
 							</a>
 
 							<br><br>
-							<span class="h3" style="padding-left:23%;">List of Spots</span>
+							<span class="h3" style="padding-left:24%;">Spots Board</span>
 							<span class="h3" style="padding-left:180px;">Desgin Your Trip</span>
 						</div>
 

@@ -42,10 +42,6 @@
 <?php
 $sql= "SELECT distinct city from attraction";//sql语句
 $result = mysql_query($sql, $conn);//执行sql语句
-while($row = mysql_fetch_array($result))
-	{
-		;//循环，拼凑下拉框选项
-	}
 ?>
 <script type="text/javascript">
 		var unitObj=document.getElementByName("city"); //页面上的<html:select>元素

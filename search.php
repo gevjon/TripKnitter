@@ -18,11 +18,11 @@
 			document.getElementById(button.id).innerHTML='<img src="../homepage/figures/collection_unstar.png" style="width:30px;height:30px;">';
 			document.getElementById(button.id).name = "unlike";
 		}
-	
+
 		var f = document.getElementById('f'+button.id);
 
 		f.submit();
-		
+
 	}
 
 	function unlike_button(index){
@@ -32,7 +32,7 @@
 </script>
 <br>
 <?php
-	
+
 
 
 	if (isset($_POST['submit'])){
@@ -60,7 +60,7 @@
 		// 	while ($row=mysqli_fetch_assoc($result))
 		// 		$saved_fav[] = $row;
 		// }
-		
+
 
 
 		// $index = 0;
@@ -94,10 +94,26 @@
 
 		$index = 0;
 		foreach ($search_result as $i){
-			$img_url = $i['image'];
+			// if(strlen($i['image'])<10){
+			// if($i['image']==' None'){
+			// 	$img_url = 'figures/spot_default.jpg';
+			// }
+			// else{
+			// 	$img_url = $i['image'];
+			// }
+			////all works
+
+			if(strpos($i['image'],"http")){
+				$img_url = $i['image'];
+			}
+			else{
+				$img_url = 'figures/spot_default.jpg';
+			}
+
 			$spot_name = $i['name'];
 			$review_essential = $i['review_essential'];
 			$sql_sid = $i['SID'];
+
 			echo '
 					<form id="f'.$index.'" name="'.$index.'" class="spot-box" action="collections.php" method="POST" target="hide">
 					 <img src="'.$img_url.'" alt="spots image" width="200px" height="150px" style="margin:50px;float:left;">

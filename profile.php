@@ -4,11 +4,18 @@
  ?>
 
 <div class="section" id="user_info">
-	<img src="figures/user_stamp/user1.jpeg" alt="user_pic" height="200px" width="200px" style="float:left;margin:50px;">
-
-	<span></span>
-	<p class="h1" id="username" style="padding-top:100px;">Username</p>
-	<p>Email Address:<php $_SESSION?></p>
+	<?php
+	$u_id = $_SESSION['u_id'];
+	$sql = "SELECT email FROM user WHERE UID=$u_id;";
+	$result = mysqli_query($conn, $sql);
+	$row=mysqli_fetch_assoc($result);
+	$random = $u_id % 6;
+	echo"
+	<img src='figures/user_stamp/user".$random.".jpeg' alt='user_pic' height='200px' width='200px' style='float:left;margin:50px;'>
+	<p class='h1' id='username' style='padding-top:100px;'>Username</p>
+	<p>Email Address:    ".$row['email']. "</p>
+	";
+		 ?>
 
 </div>
 
@@ -38,7 +45,7 @@ function unlike(button){
 
 <div class="section" id="my_fav_spots" style="Clear:both;margin:30px;">
 	<p class="h4"> My Fav Spots</p>
-	<?php 
+	<?php
 	//Get uid
 	$username = $_SESSION['u_name'];
 	$sql = "SELECT UID FROM user WHERE username='$username';";
@@ -62,7 +69,9 @@ function unlike(button){
 		$spot_name = $i['name'];
 		$spot_id = $i['SID'];
 		$review_essential = $i['review_essential'];
-		echo '<form id="f'.$index.'" name="profile_fav" action="del_fav.php" method="POST" target="hide">
+		echo '
+		<hr>
+		<form id="f'.$index.'" name="profile_fav" action="del_fav.php" method="POST" target="hide">
 			<img src="'.$spot_img.'" alt="spot_image" width:200px height:150px style="float: left; margin: 50px;">
 			<p style="float:left;">
 			<input type="hidden" name="spot_id" value="'.$spot_id.'">
@@ -73,8 +82,7 @@ function unlike(button){
 
 		</form>
 		<iframe id="hide" name="hide" style="display:none;"></iframe>
-		<br style="clear: both;">
-		<hr>';
+		<br style="clear: both;">';
 		$index += 1;
 	}
 

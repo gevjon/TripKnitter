@@ -8,5 +8,12 @@
     <p style="text-align: center;font-size:10px;padding-bottom:10px;">Email: TripKnitter@gmail.com</p>
 </div>
 
+<script >
+var div = $("#footer");
+var space = jQuery(window).height() - (div.offset().top + div.outerHeight());
+  div.css("margin-top",space);
+</script>
+
+
 </body>
 </html>

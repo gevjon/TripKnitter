@@ -36,7 +36,7 @@ session_start();
                             if (isset($_SESSION['u_id'])){
                                 echo '<form action="../homepage/includes/logout.inc.php" method="POST">
                                 	<button type="button" onclick="go_to_profile">aaasss</button>
-                           			
+
                         			</form>';
                             } else{
                                 echo '<form action="../homepage/includes/login.inc.php" method="POST">
@@ -243,10 +243,10 @@ session_start();
 							</div>';
 					}
 					else{
-						$_SESSION['u_email'] = $email;
-						$_SESSION['u_name'] = $username;
+						// $_SESSION['u_email'] = $email;
+						// $_SESSION['u_name'] = $username;
 						echo '<p class="signup_success"><b>Congratulations! You have successfully registered.</b></p>
-							<button type="button" class="return_button" onclick="return_to_homepage()">Return</button>';
+							<button type="button" style="margin-top:50px;" class="return_button" onclick="return_to_homepage()">Return</button>';
 					}
 
 				}
@@ -285,7 +285,7 @@ session_start();
 
 	</form>
 
-<?php 
+<?php
 include "footer.php"
 
  ?>

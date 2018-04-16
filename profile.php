@@ -45,6 +45,7 @@ function unlike(button){
 
 <div class="section" id="my_fav_spots" style="Clear:both;margin:30px;">
 	<p class="h4"> My Fav Spots</p>
+	<hr>
 	<?php
 	//Get uid
 	$username = $_SESSION['u_name'];
@@ -65,14 +66,20 @@ function unlike(button){
 	}
 	$index=0;
 	foreach ($search_result as $i){
-		$spot_img = $i['image'];
+		if(strpos($i['image'],"http")){
+			$spot_img = $i['image'];
+		}
+		else{
+			$spot_img = 'figures/spot_default.jpg';
+		}
+
+		// $spot_img = $i['image'];
 		$spot_name = $i['name'];
 		$spot_id = $i['SID'];
 		$review_essential = $i['review_essential'];
 		echo '
-		<hr>
 		<form id="f'.$index.'" name="profile_fav" action="del_fav.php" method="POST" target="hide">
-			<img src="'.$spot_img.'" alt="spot_image" width:200px height:150px style="float: left; margin: 50px;">
+			<img src="'.$spot_img.'" alt="spot_image" width="200px" height="150px" style="float: left; margin: 50px;">
 			<p style="float:left;">
 			<input type="hidden" name="spot_id" value="'.$spot_id.'">
 			<h2 name="spot_name" value="'.$spot_name.'" style="padding-top:40px;"> '.$spot_name.'</h2>
@@ -82,7 +89,8 @@ function unlike(button){
 
 		</form>
 		<iframe id="hide" name="hide" style="display:none;"></iframe>
-		<br style="clear: both;">';
+		<br style="clear: both;">
+		<hr>';
 		$index += 1;
 	}
 

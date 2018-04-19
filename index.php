@@ -63,19 +63,30 @@
                 </form>
             </div>
 
-						<div class="section" style="margin-top:20%;padding:80px;">
-							<a href="spots_list.php" style="padding-left:24%;text-decoration:none;">
-							<img src="figures/spots.png" alt="Spots Board" width="150px" height="150px" style="opacity:0.8"/>
+						<div class="section" style="margin-top:15%;padding:80px;">
+							<a id="icon1" href="spots_map.php" style="padding-left:20%;text-decoration:none;">
+							<img src="figures/spots.png" alt="Spots Map" width="150px" height="150px" style="opacity:0.8"/>
 							</a>
 
-							<a href="trip_design.php" style="padding-left:200px;text-decoration:none;">
-							<img src="figures/plan.png"  alt="Desgin Your Trip" width="150px" height="150px" style="opacity:0.8"/>
+              <a id="icon2" href="trip_design.php" style="padding-left:10%;text-decoration:none;">
+              <img src="figures/plan.png"  alt="Design Your Trip" width="150px" height="150px" style="opacity:0.8"/>
+              </a>
+
+							<a id="icon3" href="spots_recom.php" style="padding-left:10%;text-decoration:none;">
+							<img src="figures/recom.png"  alt="Recommendation" width="150px" height="150px" style="opacity:0.8"/>
 							</a>
 
 							<br><br>
-							<span class="h3" style="padding-left:24%;">Spots Board</span>
-							<span class="h3" style="padding-left:180px;">Desgin Your Trip</span>
+							<span class="h3" style="padding-left:20%;">Spots Map</span>
+							<span class="h3" style="padding-left:10%;">Design Your Trip</span>
+              <span class="h3" style="padding-left:10%;">Spots Board</span>
 						</div>
+
+            <!-- <script >
+            var div = $("#icon1");
+            var space = jQuery(window).width() - (div.offset().top + div.outerHeight());
+              div.css("margin-top",space);
+            </script> -->
 
 <?php include "footer.php";
  ?>

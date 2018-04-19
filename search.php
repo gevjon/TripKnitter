@@ -39,7 +39,7 @@
 		$keyword = mysqli_real_escape_string($conn, $_POST['search-homepage']);
 		//output the attractions which is favorited by users priorly
 		$user_id = $_SESSION['u_id'];
-		$sql = "SELECT * FROM attraction INNER JOIN FavoriteSpots ON attraction.SID = FavoriteSpots.SID WHERE FavoriteSpots.UID = $user_id;";
+		$sql = "SELECT * FROM attraction INNER JOIN FavoriteSpots ON attraction.SID = FavoriteSpots.SID WHERE (FavoriteSpots.UID = $user_id) AND (name LIKE '% $keyword %' OR name LIKE '% $keyword' OR name LIKE '$keyword %');";
 		$result = mysqli_query($conn, $sql);
 		$resultcheck = mysqli_num_rows($result);
 		$prior_search_result = array();

@@ -19,6 +19,11 @@
 	else{
 		$img_url = 'figures/spot_default.jpg';
 	}
+	//incase of empty string
+	$hour = $row['hour'];
+	if(!$row['hour']){
+		$hour = 'not specified.';
+	}
   echo
   "
   <h1 style='text-align:center;padding-top:20px;'>".$row['name']."</h1>
@@ -26,7 +31,7 @@
   <div style='float:left;'>
     <p style='padding-left:30px;padding-top: 90px;text-align:left;'><b>Catogory</b>: " .$row['category']."</p>
     <p style='padding-left:30px;text-align:left;'><b>Address</b>:  " .$row['address']."</p>
-    <p style='padding-left:30px;text-align:left;'> <b>Open Hour</b>: " .$row['hour']."</p>
+    <p style='padding-left:30px;text-align:left;'> <b>Open Hour</b>: " .$hour."</p>
     <p style='padding-left:30px;text-align:left;'> <b>Ticket Price</b>:  ".$row['price']."</p>
   </div>
 

@@ -77,9 +77,9 @@
 							</a>
 
 							<br><br>
-							<span class="h3" style="padding-left:20%;">Spots Map</span>
-							<span class="h3" style="padding-left:10%;">Design Your Trip</span>
-              <span class="h3" style="padding-left:10%;">Spots Board</span>
+							<span class="h3" style="padding-left:21%;">Spots Map</span>
+							<span class="h3" style="padding-left:9%;">Design Your Trip</span>
+              <span class="h3" style="padding-left:8%;">Spots Board</span>
 						</div>
 
             <!-- <script >

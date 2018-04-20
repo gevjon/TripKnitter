@@ -177,9 +177,9 @@ session_start();
 
         <?php
         while ($row= mysqli_fetch_assoc($result)):
-        $clean_review = iconv('UTF-8', 'UTF-8//IGNORE', $row['review_essential']);
-        $clean_name = iconv('UTF-8', 'UTF-8//IGNORE', $row['name']);
-        $clean_hour = iconv('UTF-8', 'UTF-8//IGNORE', $row['hour']);
+        $clean_review = iconv('UTF-8', 'UTF-8//IGNORE', utf8_encode($row['review_essential']));
+        $clean_name = iconv('UTF-8', 'UTF-8//IGNORE', utf8_encode($row['name']));
+        $clean_hour = iconv('UTF-8', 'UTF-8//IGNORE', utf8_encode($row['hour']));
         ;?>
           temp['sid'] = <?php echo $row['sid'] ;?>;
           temp['lat'] = <?php echo $row['coordinate_latitude'] ;?>;
@@ -189,7 +189,7 @@ session_start();
           temp['hour'] = <?php echo json_encode($clean_hour) ;?>;
           temp['review'] = <?php echo json_encode($clean_review) ;?>;
           locations = locations.concat(JSON.parse(JSON.stringify(temp)));//deep copy of objects
-          <?php endwhile;?>
+        <?php endwhile;?>
         //console.log(locations);
         // Add some markers to the map.
         // Note: The code uses the JavaScript Array.prototype.map() method to

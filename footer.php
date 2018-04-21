@@ -14,6 +14,51 @@ var space = jQuery(window).height() - (div.offset().top + div.outerHeight());
   div.css("margin-top",space);
 </script>
 
+<!-- click Animation -->
+<script type="text/javascript">
 
+const burst = new mojs.Burst({
+  left: 0, top: 0,
+  radius:   { 0: 100 },
+  count:    5,
+  children: {
+    shape:        'circle',
+    radius:       10,
+    fill:       [ 'pink', 'cyan', 'yellow','yellowgreen','gold' ],
+    strokeWidth:  5,
+    duration:     2000
+  }
+});
+
+document.addEventListener( 'click', function (e) {
+  burst
+    .tune({ x: e.pageX, y: e.pageY })
+    .setSpeed(3)
+    .replay();
+} );
+
+// const bubbles = new mojs.Burst({
+//   left: 0, top: 0,
+//   radius:   25,
+//   count:    3,
+//   children: {
+//     stroke:       'white',
+//     fill:         'none',
+//     scale:        1,
+//     strokeWidth:  { 8: 0 },
+//     radius:       { 0 : 'rand(8, 12)' },
+//     degreeShift:  'rand(-50, 50)',
+//     duration:     400,
+//     delay:        'rand(0, 250)',
+//   }
+// });
+//
+// document.addEventListener( 'click', function (e) {
+//   bubbles
+//     .tune({ x: e.pageX, y: e.pageY })
+//     .generate()
+//     .replay();
+// });
+</script>
 </body>
 </html>

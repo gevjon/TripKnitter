@@ -21,8 +21,8 @@
 
     }
 
-
 </script>
+
 
 <?php
 	include "header.php";

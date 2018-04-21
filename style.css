@@ -242,3 +242,7 @@ header .nav-login form a{
 /* .p{
   font-style: Calibri
 } */
+#tag:checked+span {
+  color: #337ab7;
+  font-weight: bold;
+}

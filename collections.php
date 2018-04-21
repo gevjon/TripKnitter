@@ -27,8 +27,23 @@
 				$sid = $row['SID'];
 			}
 		}
+		
+		//Check whether the user has favored this spot
+		$sql_check = "SELECT * FROM FavoriteSpots WHERE UID = $uid AND SID = $sid;";
+		$result_check = mysqli_query($conn,$sql_check);
+		$num_record = mysqli_num_rows($result_check);
+		if ($num_record > 0){
+			$sql_del = "DELETE FROM FavoriteSpots WHERE UID = $uid AND SID = $sid;";
+			mysqli_query($conn, $sql_del);
+		}else{
+			$sql = "INSERT INTO FavoriteSpots(UID,SID) VALUES ($uid, $sid)";
+			mysqli_query($conn, $sql);
+		}
+		
+		/*
 		$sql = "INSERT INTO FavoriteSpots(UID,SID) VALUES ($uid, $sid)";
 		mysqli_query($conn, $sql);
+		*/
 		// header("Location: collections.php?collect=success");
 	}
 	else{

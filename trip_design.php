@@ -26,10 +26,10 @@
 	</select>
 
 	Budget:
-	<select class="" name="budget" style="width:100px;margin-right:5%;">
-		<option value="low"> low </option>
-		<option value="median"> median </option>
-		<option value="high"> high </option>
+	<select class="" name="budget" style="width:120px;margin-right:5%;">
+		<option value="None"> --None-- </option>
+		<option value="Free"> Free </option>
+		<option value="Charge"> Charge </option>
 	</select>
 
 	Num of Sites/Day:

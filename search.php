@@ -42,7 +42,7 @@
 		$resultcheck_fav = 0;
 		if(isset($_SESSION['u_id'])){
 			$user_id = $_SESSION['u_id'];
-			$sql = "SELECT * FROM attraction INNER JOIN FavoriteSpots ON attraction.SID = FavoriteSpots.SID WHERE (FavoriteSpots.UID = $user_id) AND (name LIKE '%$keyword%');";
+			$sql = "SELECT * FROM attraction INNER JOIN FavoriteSpots ON attraction.SID = FavoriteSpots.SID WHERE (FavoriteSpots.UID = $user_id) AND (name LIKE '%$keyword%' OR city LIKE '%$keyword%');";
 			$result = mysqli_query($conn, $sql);
 			$resultcheck_fav = mysqli_num_rows($result);
 			if ($resultcheck_fav > 0){
@@ -92,7 +92,7 @@
 
 
 
-		$sql = "SELECT * FROM attraction WHERE name LIKE '% $keyword %' OR name LIKE '% $keyword' OR name LIKE '$keyword %';";
+		$sql = "SELECT * FROM attraction WHERE name LIKE '%$keyword%' OR city LIKE '%$keyword%';";
 		$result = mysqli_query($conn, $sql);
 		$resultcheck = mysqli_num_rows($result);
 		$search_result = array();
@@ -158,7 +158,7 @@
 
 
 
-		$index = 0;
+		
 		foreach ($search_result as $i){
 			//check whether the result has been printed since it is liked by the user
 			if (has_been_liked($i,$prior_search_result)){

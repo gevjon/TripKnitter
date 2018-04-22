@@ -34,9 +34,9 @@
 <?php
 
 
-
-	if (isset($_POST['submit'])){
-		$keyword = mysqli_real_escape_string($conn, $_POST['search-homepage']);
+	 // if (isset($_POST['submit'])){
+		$keyword = mysqli_real_escape_string($conn, $_POST['search_keyword']);
+		//$keyword = mysqli_real_escape_string($conn, $_POST['search-homepage']);
 		//output the attractions which is favorited by users priorly
 		$prior_search_result = array();
 		$resultcheck_fav = 0;
@@ -197,11 +197,6 @@
 
 		}
 
-	}
-	// else{
-	// 	header("Location: index.php");
-	// 	exit();
-	// }
 
 
 

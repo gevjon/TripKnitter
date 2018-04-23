@@ -45,7 +45,7 @@
   <img src="<?php echo $img_url ?>" alt='spot image' width='350px' height='250px' style='margin-left:200px;margin-bottom: 20px;margin-top:50px;float:left;'>
   <div style='float:left;width:500px;'>
     <p style='padding-left:30px;padding-top: 80px;text-align:left;'><b>Catogory</b>: <?php echo $row['category'] ?> </p>
-    <p style='padding-left:30px;text-align:left;'><b>Address</b>:   <?php echo $row['address'] ?></p>
+    <p style='padding-left:30px;text-align:left;'><b>Address</b>:   <?php echo $row['address'] ?>, <?php echo $row['city'] ?></p>
     <p style='padding-left:30px;text-align:left; word-wrap:break-word;'> <b>Open Hour</b>:  <?php echo $row['hour'] ?></p>
     <p style='padding-left:30px;text-align:left;'> <b>Ticket Price</b>:  <?php $row['price'] ?></p>
 		<p style='padding-left:30px;text-align:left;'>

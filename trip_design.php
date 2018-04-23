@@ -10,7 +10,7 @@
 		 <img src="figures/background2.jpg" width="100%" height="100%">
  </div>
 
-<form  action="plans.php" method="post" style="padding:100px;padding-top:500px;">
+<form  action="plans_process.php" method="post" style="padding:100px;padding-top:500px;">
 	Target City:
 	<select class="" name="city" style="width:100px;margin-right:5%;">
 		<?php while($row = mysqli_fetch_assoc($result)):;?>

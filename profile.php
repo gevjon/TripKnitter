@@ -79,7 +79,7 @@ function unlike(button){
 		$review_essential = $i['review_essential'];
 		echo '
 		<form id="f'.$index.'" name="profile_fav" action="del_fav.php" method="POST" target="hide">
-			<img src="'.$spot_img.'" alt="spot_image" width="200px" height="150px" style="float: left; margin: 50px;">
+			<img src="'.$spot_img.'?w=170&h=106&fit=crop&q=50&auto=enhance&crop=entropy" alt="spot_image" width="200px" height="150px" style="float: left; margin: 50px;">
 			<p style="float:left;">
 			<input type="hidden" name="spot_id" value="'.$spot_id.'">
 			<h2 name="spot_name" value="'.$spot_name.'" style="padding-top:40px;"> '.$spot_name.'</h2>

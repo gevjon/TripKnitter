@@ -34,9 +34,9 @@
 <?php
 
 
-
-	if (isset($_POST['submit'])){
-		$keyword = mysqli_real_escape_string($conn, $_POST['search-homepage']);
+	 // if (isset($_POST['submit'])){
+		$keyword = mysqli_real_escape_string($conn, $_POST['search_keyword']);
+		//$keyword = mysqli_real_escape_string($conn, $_POST['search-homepage']);
 		//output the attractions which is favorited by users priorly
 		$prior_search_result = array();
 		$resultcheck_fav = 0;
@@ -67,7 +67,7 @@
 
 				echo '
 						<form id="f'.$index.'" name="'.$index.'" class="spot-box" action="collections.php" method="POST" target="hide">
-						 <img src="'.$img_url.'" alt="spots image" width="200px" height="150px" style="margin:50px;float:left;">
+						 <img src="'.$img_url.'?w=170&h=106&fit=crop&q=50&auto=enhance&crop=entropy" alt="spots image" width="200px" height="150px" style="margin:50px;float:left;">
 						 <p style="float:left;">
 						 <input type="hidden" name="spot_name" value="'.$spot_name.'">
 
@@ -92,7 +92,9 @@
 
 
 
+
 		$sql = "SELECT * FROM attraction WHERE name LIKE '%$keyword%' OR city LIKE '%$keyword%';";
+
 		$result = mysqli_query($conn, $sql);
 		$resultcheck = mysqli_num_rows($result);
 		$search_result = array();
@@ -158,7 +160,7 @@
 
 
 
-		
+
 		foreach ($search_result as $i){
 			//check whether the result has been printed since it is liked by the user
 			if (has_been_liked($i,$prior_search_result)){
@@ -175,7 +177,7 @@
 
 				echo '
 						<form id="f'.$index.'" name="'.$index.'" class="spot-box" action="collections.php" method="POST" target="hide">
-						 <img src="'.$img_url.'" alt="spots image" width="200px" height="150px" style="margin:50px;float:left;">
+						 <img src="'.$img_url.'?w=170&h=106&fit=crop&q=50&auto=enhance&crop=entropy" alt="spots image" width="200px" height="150px" style="margin:50px;float:left;">
 						 <p style="float:left;">
 						 <input type="hidden" name="spot_name" value="'.$spot_name.'">
 
@@ -197,11 +199,6 @@
 
 		}
 
-	}
-	// else{
-	// 	header("Location: index.php");
-	// 	exit();
-	// }
 
 
 

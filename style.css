@@ -199,14 +199,16 @@ header .nav-login form a{
 }
 
 .container{
-    margin-top: 400px;
-    width: 100px;
+    margin-top: 300px;
+    width: auto;
 }
 
 #search-homepage{
+    opacity: 80%;
     margin: 0 auto;
     width: 65%;
 }
+
 
 .glyphicon-search{
     font-size: 20px;
@@ -242,7 +244,3 @@ header .nav-login form a{
 /* .p{
   font-style: Calibri
 } */
-#tag:checked+span {
-  color: #337ab7;
-  font-weight: bold;
-}

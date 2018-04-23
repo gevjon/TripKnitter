@@ -77,7 +77,7 @@
 						}
 					}
 					echo "</ul>
-							<hr/ style='color:black;'>";
+							<hr/>";
 				}
 				$actual_plan_id += 1;
 			}

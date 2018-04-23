@@ -57,7 +57,7 @@
 			while( $i = mysqli_fetch_assoc($detail_tag)){
 				$random = rand() % count($tag_class);
 				?>
-				<a href='' class='badge badge-<?php echo $tag_class[$random] ?>'><?php echo $i['words'] ?></a>
+				<a href='' class='badge badge-<?php echo $tag_class[$random] ?>' style="margin-top:3px;"><?php echo $i['words'] ?></a>
 			<?php }}?>
 		</p>
   </div>

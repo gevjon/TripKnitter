@@ -92,7 +92,7 @@
 
 
 
-		$sql = "SELECT * FROM attraction WHERE name LIKE '% $keyword %' OR name LIKE '% $keyword' OR name LIKE '$keyword %';";
+		$sql = "SELECT * FROM attraction WHERE name LIKE '% $keyword %' OR name LIKE '% $keyword' OR name LIKE '%$keyword %';";
 		$result = mysqli_query($conn, $sql);
 		$resultcheck = mysqli_num_rows($result);
 		$search_result = array();
@@ -175,7 +175,7 @@
 
 				echo '
 						<form id="f'.$index.'" name="'.$index.'" class="spot-box" action="collections.php" method="POST" target="hide">
-						 <img src="'.$img_url.'" alt="spots image" width="200px" height="150px" style="margin:50px;float:left;">
+						 <img src="'.$img_url.'?w=170&h=106&fit=crop&q=50&auto=enhance&crop=entropy" alt="spots image" width="200px" height="150px" style="margin:50px;float:left;">
 						 <p style="float:left;">
 						 <input type="hidden" name="spot_name" value="'.$spot_name.'">
 

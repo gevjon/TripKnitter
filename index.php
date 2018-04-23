@@ -179,7 +179,7 @@
 
             </div>
 
-						<div class="section" style="margin-top:15%;padding:80px;">
+						<div class="section" style="margin-top:16%;padding:80px;">
 							<a id="icon1" href="spots_map.php" style="padding-left:20%;text-decoration:none;">
 							<img src="figures/spots.png" alt="Spots Map" width="150px" height="150px" style="opacity:0.8"/>
 							</a>

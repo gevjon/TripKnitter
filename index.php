@@ -179,8 +179,8 @@
 
             </div>
 
-						<div class="section" style="margin-top:16%;padding:80px;">
-							<a id="icon1" href="spots_map.php" style="padding-left:20%;text-decoration:none;">
+						<div class="section" id="function" style="margin-top:16%;padding:80px;">
+							<a id="icon1" href="spots_map.php" style="padding-left:20%;text-decoration:none;max-width:30%;">
 							<img src="figures/spots.png" alt="Spots Map" width="150px" height="150px" style="opacity:0.8"/>
 							</a>
 
@@ -198,11 +198,14 @@
               <span class="h3" style="padding-left:8%;">Spots Board</span>
 						</div>
 
-            <!-- <script >
-            var div = $("#icon1");
+            <!-- control the distance of functional circles ??????-->
+            <script >
+            var prev = $("#background");
+            var div = $("#function");
             var space = jQuery(window).width() - (div.offset().top + div.outerHeight());
               div.css("margin-top",space);
-            </script> -->
+            </script>
+
 <script type="text/javascript">
 $(document).ready(function() {
 // set focus on search box
@@ -234,49 +237,7 @@ function return_url() {
       f1.submit();
     }
   }
-	// // clear previous results (if any)
-	// $('a').remove();
-	// var query_term = $('#query').val();
-	// console.log(query_term);
-	// $.ajax({
-	// 	url: 'https://en.wikipedia.org/w/api.php',
-	// 	dataType: 'jsonp',
-	// 	data: {
-	// 		action: 'opensearch',
-	// 		search: query_term,
-	// 		format: 'json'
-	// 	},
-	// 	success: function(response) {
-	// 		$('#query_reminder').text('You searched on: "' + query_term + '"');
-	// 		for(var i = 0; i < response[1].length; i++) {
-	// 			var wiki_article = document.createElement('div');
-	// 			wiki_article.className = 'wiki-article';
-  //
-	// 			var wiki_link = document.createElement('a');
-	// 			wiki_link.setAttribute('href', response[3][i]);
-	// 			wiki_link.setAttribute('target', '_blank');
-	// 			wiki_link.appendChild(wiki_article);
-  //
-	// 			var title = document.createElement('h4');
-	// 			var title_text = document.createTextNode(response[1][i]);
-	// 			title.appendChild(title_text);
-	// 			wiki_article.appendChild(title);
-  //
-	// 			var summary = document.createElement('p');
-	// 			var summary_text = document.createTextNode(response[2][i]);
-	// 			summary.appendChild(summary_text);
-	// 			wiki_article.appendChild(summary);
-  //
-	// 			document.body.appendChild(wiki_link);
-	// 		};
-	// 		// clear search field from previous search
-	// 		$('#query').val('');
-  //
-	// 		// focus out of search field
-	// 		$('#query').blur();
-	// 		//console.log(response);
-	// 	},
-	 // });
+
 
 
 function user_not_exist(){

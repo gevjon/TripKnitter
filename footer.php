@@ -4,7 +4,9 @@
     the trip for you automatically. We knit the plans by searching
     and organizing all spots you either you interested or suits your
      plan. Future function like accommodation and  transportation
-    suggestions will be provided.</p>
+    suggestions will be provided.<br>
+    Acknowledgement: Attraction data is retrieved from "www.lonelyplanet.com".
+  </p>
     <p style="text-align: center;font-size:10px;padding-bottom:10px;">Email: TripKnitter@gmail.com</p>
 </div>
 

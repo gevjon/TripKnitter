@@ -44,7 +44,7 @@
 				if (count($current_plan) < $tour_days*$sites_per_day){
 					continue;
 				}
-				echo "<h2 style='margin-left:20px'>Plan ".$actual_plan_id."</h2>";
+				echo "<h2 style='margin-left:20px; font-family:  Impact, Charcoal, sans-serif; font-size:40px;'>Plan ".$actual_plan_id."</h2>";
 				for ($day_count = 1; $day_count <= $tour_days; $day_count++){
 					echo "<ul class='cards'>";
 					for ($site_count = 1; $site_count <= ($sites_per_day+1); $site_count++){
@@ -77,7 +77,7 @@
 						}
 					}
 					echo "</ul>
-							<hr/>";
+							<hr/ style='color:black;'>";
 				}
 				$actual_plan_id += 1;
 			}

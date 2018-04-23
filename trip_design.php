@@ -29,7 +29,7 @@
 	<select class="" name="budget" style="width:120px;margin-right:5%;">
 		<option value="None"> --None-- </option>
 		<option value="Free"> Free </option>
-		<option value="Charge"> Charge </option>
+		<option value="Charged"> Charge </option>
 	</select>
 
 	Num of Sites/Day:

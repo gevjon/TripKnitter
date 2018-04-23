@@ -8,7 +8,7 @@
 
 <br>
 
-<body>
+<body >
 	<?php 
 		$plan1 = $_POST['plan1'];
 		$plan2 = $_POST['plan2'];
@@ -56,11 +56,13 @@
 						}else{
 							$site = $current_plan[$site_count+($day_count-1)*$sites_per_day - 2];
 							$query_site = mysqli_real_escape_string($conn, $site);
-							$sql = "SELECT image FROM attraction WHERE name = '$query_site';";
+							$sql = "SELECT image,SID FROM attraction WHERE name = '$query_site';";
 							$url_query = mysqli_query($conn,$sql);
 							$result_check = mysqli_num_rows($url_query);
 							if ($result_check > 0){
-								$url = mysqli_fetch_assoc($url_query)['image'];
+								$result = mysqli_fetch_assoc($url_query);
+								$url = $result['image'];
+								$sid = $result['SID'];
 							}
 							
 							if (!strpos($url,"http")){
@@ -68,7 +70,7 @@
 							}
 							$card_id = 5+$site_count-$sites_per_day;
 							echo "<li class='card card-".$card_id."' style = 'background-color = pink;'>
-									<img src='".$url."'/ alt='Unloaded image'>  
+									<a href='spot_detail.php?sid=".$sid."' target='_blank'><img src='".$url."'/ alt='Unloaded image'></a>
 									<div class='content'>
 										<h1 style='font-size:18px;text-align:center;'>".$site."</h1>
 										

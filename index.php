@@ -138,6 +138,9 @@
             echo '<script>wrong_pwd()</script>';
         }
     }
+    if (isset($_GET['sign-in'])){
+        echo "<script>alert('Please sign in first!');</script>";
+    }
 
 
 

@@ -150,7 +150,7 @@
 		 		}
 		 		cluster_to_spots.push(temp);
 		 	}
-
+		 	console.log(cluster_to_spots);
 		 	var user_fav = [];
 		 	var user_brow = {};
 		 	var days = <?php echo $days; ?>;
@@ -179,6 +179,8 @@
 		 	 for (var i = 0; i < 3; i++){
 		 	 	plans.push(pick_spots(cluster_to_spots[i],days,sites_per_day,user_fav,user_brow));
 		 	 }
+		 	 console.log(plans);
+
 		 	 return plans;
 	 	}
 	 	
@@ -191,16 +193,19 @@
 	<input type="hidden" id="plan2" name="plan2" value=""> 
 	<input type="hidden" id="plan3" name="plan3" value=""> 
 	<input type="hidden" id="days" name="days" value="">
+	<input type="hidden" name="sites_per_day" id="sites_per_day" value="">
 </form>
 
 
 <script type="text/javascript">
 	var final_plan = make_plan();
 	var days = <?php echo $_POST['duration']; ?>;
+	var sites_per_day = <?php echo $_POST['num_sites'] ?>;
 	document.getElementById("plan1").value = final_plan[0];
 	document.getElementById("plan2").value = final_plan[1];
 	document.getElementById("plan3").value = final_plan[2];
 	document.getElementById("days").value = days;
+	document.getElementById("sites_per_day").value = sites_per_day;
 	var form = document.getElementById("submit");
 	form.submit();
 </script>

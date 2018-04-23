@@ -46,7 +46,7 @@ ul.cards li.card {
 }
 ul.cards li.card img {
   max-width: 100%;
-  height: auto;
+  height: 150px;
 }
 ul.cards li.card div.content {
   padding: 5px 10px;
@@ -83,20 +83,29 @@ ul.cards li.card.card-5 {
           transform: rotateZ(-7deg);
   transition-delay: 0.2s;
 }
+ul.cards li.card.card-6 {
+  z-index: 5;
+  -webkit-transform: rotateZ(7deg);
+          transform: rotateZ(7deg);
+  transition-delay: 0.25s;
+}
 ul.cards.transition li.card {
   -webkit-transform: rotateZ(0deg);
           transform: rotateZ(0deg);
 }
 ul.cards.transition li.card.card-1 {
-  left: 880px;
+  left: 1100px;
 }
 ul.cards.transition li.card.card-2 {
-  left: 660px;
+  left: 880px;
 }
 ul.cards.transition li.card.card-3 {
-  left: 440px;
+  left: 660px;
 }
 ul.cards.transition li.card.card-4 {
+  left: 440px;
+}
+ul.cards.transition li.card.card-6 {
   left: 220px;
 }
 ul.card-stacks {

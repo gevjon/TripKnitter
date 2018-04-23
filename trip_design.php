@@ -38,7 +38,7 @@
 		<option value="2"> 2 </option>
 		<option value="3"> 3 </option>
 		<option value="4"> 4 </option>
-		<option value="more"> 5 </option>
+		<option value="5"> 5 </option>
 	</select>
 
 	<input type="submit" value="Plan My Trip" style="border-radius: 12px;font-size: 20px;color:white;width: 300px;margin-left: 35%;margin-top: 50px;padding: 5px;background-color:#3EC3C1;border:none;">

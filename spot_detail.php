@@ -24,27 +24,51 @@
 	if(!$row['hour']){
 		$hour = 'not specified.';
 	}
-  echo
-  "
-  <h1 style='text-align:center;padding-top:20px;'>".$row['name']."
-	<button type='button' class='btn btn-outline-dark'data-toggle='modal' data-target='#myModal' >Visted</button> </h1>
 
-  <img src='".$img_url."' alt='spot image' width='350px' height='250px' style='margin-left:200px;margin-bottom: 20px;margin-top:50px;float:left;'>
-  <div style='float:left;'>
-    <p style='padding-left:30px;padding-top: 90px;text-align:left;'><b>Catogory</b>: " .$row['category']."</p>
-    <p style='padding-left:30px;text-align:left;'><b>Address</b>:  " .$row['address']."</p>
-    <p style='padding-left:30px;text-align:left;'> <b>Open Hour</b>: " .$hour."</p>
-    <p style='padding-left:30px;text-align:left;'> <b>Ticket Price</b>:  ".$row['price']."</p>
+	//query the eixisting tags
+	$sql = "SELECT tags.words as words FROM attraction_tag ,tags WHERE $detail_sid = attraction_tag.sid AND attraction_tag.tid = tags.tid;";
+	$detail_tag = mysqli_query($conn,$sql);
+	$detail_tag_num = mysqli_num_rows($detail_tag);
+  ?>
+  <h1 style="text-align:left;padding-top:20px;padding-left:200px;"><?php echo $row['name'] ?>
+
+	<?php
+	if(isset($_SESSION['u_id'])){
+		$u_id = $_SESSION['u_id'];
+		echo "
+		<button type='button' style='margin-left:20px;' class='btn btn-outline-dark'data-toggle='modal' data-target='#myModal' >Visted</button></h1>
+		";
+	} else {
+		echo "</h1>";
+	}?>
+
+  <img src="<?php echo $img_url ?>" alt='spot image' width='350px' height='250px' style='margin-left:200px;margin-bottom: 20px;margin-top:50px;float:left;'>
+  <div style='float:left;width:500px;'>
+    <p style='padding-left:30px;padding-top: 80px;text-align:left;'><b>Catogory</b>: <?php echo $row['category'] ?> </p>
+    <p style='padding-left:30px;text-align:left;'><b>Address</b>:   <?php echo $row['address'] ?></p>
+    <p style='padding-left:30px;text-align:left; word-wrap:break-word;'> <b>Open Hour</b>:  <?php echo $row['hour'] ?></p>
+    <p style='padding-left:30px;text-align:left;'> <b>Ticket Price</b>:  <?php $row['price'] ?></p>
+		<p style='padding-left:30px;text-align:left;'>
+
+		<?php
+		//randomly choose the colour
+		$tag_class = array("primary", "success","danger","warning","info","dark");
+		if($detail_tag_num > 0){
+			while( $i = mysqli_fetch_assoc($detail_tag)){
+				$random = rand() % count($tag_class);
+				?>
+				<a href='' class='badge badge-<?php echo $tag_class[$random] ?>' style="margin-top:3px;"><?php echo $i['words'] ?></a>
+			<?php }}?>
+		</p>
   </div>
 
-
-  <div class='section' style='clear:both;padding: 50px 200px 50px 200px;'>"
-    .$row['review_essential']."
+  <div class='section' style='clear:both;padding: 50px 200px 50px 200px;'>
+    <?php echo $row['review_essential'] ?>
     <br><br>"
-    .$row['review_extension']."
+		<?php echo $row['review_extension'] ?>
   </div>
-  ";
 
+<?php
   //updating the browse table
 	//tracking user's click action
 	if (isset($_SESSION['u_id'])){
@@ -78,6 +102,17 @@
 
  ?>
 
+ <!-- to close the modal -->
+<script type="text/javascript">
+function tag_submit(btn){
+	var f = document.getElementById('visited_tag');
+	f.submit();
+	//after submit, refresh the queried data
+	$('#myModal').modal('toggle');
+	// document.getElementById('myButton').innerHTML="Visited!";
+}
+</script>
+
 <style media="screen">
 input{
     position: absolute;
@@ -93,12 +128,14 @@ label {
 	/*use solid key word to have border */
   border-radius: 3px;
 	border-color: grey;
+	font-size: 13px;
   color: grey;
   background-color: white;
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
 }
+
 /* label ::before{
 	position: absolute;
 	color: grey;
@@ -118,6 +155,7 @@ input:checked+label {
 	color: #3EC3C1;
 	border-color: #3EC3C1;
 }
+
 </style>
 
  <!-- The Modal -->
@@ -134,27 +172,32 @@ input:checked+label {
        <!-- Modal body -->
        <div class="modal-body">
          Choose the words that best describe this place:
-				 <br>
+				 <br><br>
 				 <!-- <input  id="input_tag" type="checkbox"  value="test">
 				 <label for="input_tag" > click me! </label> -->
+				 <form id="visited_tag" action="visited_tag.php" method="post" target="hide">
+					 <input type="hidden" name="uid" value="<?php echo $u_id ?>" >
+					 <input type="hidden" name="sid" value="<?php echo $detail_sid ?>" >
 				 <?php
-				 	$tag_sql = "SELECT * FROM tags;";
+				 	$tag_sql = "SELECT * FROM tags WHERE tid NOT IN (SELECT tid from attraction_tag WHERE sid=$detail_sid);";
 		 			$tag_res = mysqli_query($conn,$tag_sql);
 		 			$tag_num = mysqli_num_rows($tag_res);
-					while($tag_row = mysqli_fetch_assoc($tag_res)):;
-					 $tid = $tag_row['tid'];
+					if($tag_num>0){
+						while($tag_row = mysqli_fetch_assoc($tag_res)):;
+						 $tid = $tag_row['tid'];
 				  ?>
-					<input  id="<?php echo $tid?>" type="checkbox"  value="">
+					<input  id="<?php echo $tid?>" name="tid[]" type="checkbox"  value="<?php echo $tid ?>">
  				  <label for="<?php echo $tid ?>" > <?php echo $tag_row['words'] ?> </label>
-					<?php
-					endwhile;?>
+					<?php endwhile;}?>
 
        </div>
 
        <!-- Modal footer -->
        <div class="modal-footer">
-				 <button type="button" class="btn btn-info">Submit</button>
+				 <button id="myButton" type="submit" class="btn btn-info" onclick="tag_submit(this)">Submit</button>
          <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+			 </form>
+			 <iframe id="hide" name="hide" style="display:none;"></iframe>
        </div>
 
      </div>

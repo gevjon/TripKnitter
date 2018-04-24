@@ -2,7 +2,17 @@
 include_once "../homepage/includes/db.inc.php";
 session_start();
   //get all latitude & longitude of location from database
-  $location = "SELECT sid,coordinate_latitude, coordinate_longitude,name,address,hour,review_essential FROM attraction";
+  // $location = "SELECT sid,coordinate_latitude, coordinate_longitude,name,address,hour,review_essential FROM attraction";
+  //updated qurey for top 100 places
+  $location = "SELECT * from attraction as AA,
+  (SELECT ifnull(G.general_score,0)as score,A.sid from
+  (SELECT (sum(b.NumClicks)*0.5+count(f.uid)*5) AS general_score,a.sid as sid
+	 FROM BrowseHistory b,FavoriteSpots f,attraction a
+	 WHERE b.uid=f.uid AND b.sid=f.sid AND b.sid=a.sid
+	 GROUP BY a.sid
+	 ORDER BY general_score DESC LIMIT 1000)as G
+	RIGHT JOIN (select sid from attraction)as A
+	ON G.sid = A.sid ORDER BY score DESC LIMIT 1000)as top1000 WHERE AA.sid = top1000.sid;";
   $result = mysqli_query($conn, $location);
   $resultcheck = mysqli_num_rows($result);
   // $prior_search_result = array();
@@ -11,6 +21,8 @@ session_start();
   //     $prior_search_result[] = $row;
   //   }
   // }
+
+
  ?>
 
 
